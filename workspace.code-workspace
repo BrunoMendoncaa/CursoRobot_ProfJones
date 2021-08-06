@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 8,
+		"robot.language-server.python": "C:\\Users\\bruno.mendonca\\Desktop\\CursoRobot_ProfJones\\venv\\Scripts\\python.exe",
+		"robot.lint.robocop.enabled": true,
+		"robot.variables": {
+			"ROOT" : "C:\\Users\\bruno.mendonca\\Desktop\\Curso Robot"
+		}
+	}
+}
