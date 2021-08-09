@@ -58,10 +58,10 @@ Realizar login clash Royale
     Click Element      ${LOGIN_BUTTON}
 
 Criar chave
-    Sleep    3s
+    Sleep    2s
     Go To    ${URL}#/new-key
-    Wait Until Element Is Visible        ${KEY_NAME_ELEMENT}
-    Input Text    ${KEY_NAME_ELEMENT}    ${KEY_NAME}
-    Input Text    ${KEY_DESC_ELEMENT}    ${KEY_DESC}
-    Input Text    ${IP_ELEMENT}          ${IP}
-    Click Button    ${SUBMIT_BUTTON}
+    Wait Until Element Is Visible          ${KEY_NAME_ELEMENT}
+    Input Text      ${KEY_NAME_ELEMENT}    ${KEY_NAME}
+    Input Text      ${KEY_DESC_ELEMENT}    ${KEY_DESC}
+    Input Text      ${IP_ELEMENT}          ${IP}
+    Click Element    xpath=//*[@id="content"]/div/div[2]/div/div/section/div/div/div[2]/form/div[5]/button
