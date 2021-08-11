@@ -1,30 +1,33 @@
+*** Settings ***
+Resource    actions.robot
 
 *** Keywords ***
 Abrir o navegador
-    Open Browser                 ${URL}        ${BROWSER}
+    [Documentation]        entrar na página principal do clash royale
+    Open Browser                 ${URL.main}        ${BROWSER}
     Maximize Browser Window
-    Title Should Be    ${TITULO}
 
 Clicar em register
-    Click Element                ${REGISTRO}
+    [Documentation]        clicar em registrar-se
+    Clicar Elemento        ${REGISTRO}
 
 Realizar um cadastro
-    Input Text        ${NOME_ELEMENT}    ${NOME}
-    Input Text        ${EMAIL_ELEMENT}   ${EMAIL}
-    Click Button      ${SUBMIT_BUTTON}
+    [Documentation]        realizar o cadastro no clash royale
+    Digitar Texto        ${NOME_ELEMENT}    ${USER.nome}
+    Digitar Texto        ${EMAIL_ELEMENT}   ${USER.email}
+    Clicar Botao         ${SUBMIT_BUTTON}
 
 Realizar login clash Royale
-    Go To    ${URL_LOGIN}
-
-    Input Text         ${EMAIL_ELEMENT}        ${EMAIL}
-    Input Text         ${PASS_ELEMENT}         ${PASSWORD}
-    Click Element      ${LOGIN_BUTTON}
+    [Documentation]        realizar o login na plataforma
+    Go To                  ${URL.login}
+    Digitar Texto          ${EMAIL_ELEMENT}        ${USER.email}
+    Digitar Texto          ${PASS_ELEMENT}         ${USER.password}
+    Clicar Elemento        ${LOGIN_BUTTON}
 
 Criar chave
-    Sleep    2s
-    Go To    ${URL}#/new-key
-    Wait Until Element Is Visible           ${KEY_NAME_ELEMENT}
-    Input Text       ${KEY_NAME_ELEMENT}    ${KEY_NAME}
-    Input Text       ${KEY_DESC_ELEMENT}    ${KEY_DESC}
-    Input Text       ${IP_ELEMENT}          ${IP}
-    Click Element    ${KEY_BUTTON}
+    [Documentation]        criar chave de api
+    Go To               ${URL.key}
+    Digitar Texto       ${KEY_NAME_ELEMENT}    ${KEY.nome}
+    Digitar Texto       ${KEY_DESC_ELEMENT}    ${KEY.desc}
+    Digitar Texto       ${IP_ELEMENT}          ${KEY.ip}
+    Clicar Elemento     ${KEY_BUTTON}
